@@ -1,4 +1,3 @@
-// server.js
 const express = require('express')
 const app = express()
 const cors = require('cors')
@@ -22,6 +21,4 @@ app.post('/api/login', (req, res) => {
   }
 })
 
-app.listen(3002, () => {
-  console.log('🚀 Сервер запущен на http://localhost:3002')
-})
+app.listen(3002)

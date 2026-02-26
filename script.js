@@ -27,8 +27,6 @@ loginForm.addEventListener('submit', async function(event) {
   if (!response.ok) {
     throw new Error(`Ошибка сервера: ${response.status}`)
   }
-  const json = await response.json();
-  console.log("Успех:", JSON.stringify(json));
   success();
 } catch (error) {
   console.error("Ошибка:", error);
