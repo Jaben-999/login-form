@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #1a2a3a 0%, #0f1a24 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 400px;
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #1e293b;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            color: #334155;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px #3b82f6;
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .demo-hint {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .demo-hint p {
+            margin: 0.3rem 0;
+        }
+
+        .demo-hint code {
+            background: #e2e8f0;
+            padding: 0.2rem 0.5rem;
+            border-radius: 8px;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+        .screen {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #1e293b;
+}
+
+.screen.show {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-content.hide {
+    animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+.AddError {
+    display: none;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.0rem;
+    color: #ff0000;
+}
+.AddError.show {
+    display: block;
+   
+}
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="login-content" id="login-content">
+        <h2>Вход</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Логин</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    placeholder="Введите логин"
+                    autocomplete="off"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Введите пароль"
+                >
+            </div>
+      <div class="AddError" id="AddError">
+       <p>Неправильный логин или пароль</p>
+      </div>
+            <button type="submit">Войти</button>
+        </form>
+
+        <div class="demo-hint">
+            <p>👆 <strong>Для проверки:</strong></p>
+            <p>Логин: <code>CocaCola</code></p>
+            <p>Пароль: <code>zX123456789</code></p>
+        </div>
+
+        <div class="footer-note">
+            защищено • безопасный вход
+        </div>
+    </div>
+    <div class="screen" id="screen">
+        <p>Вход успешно выполнен</p>
+       </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
